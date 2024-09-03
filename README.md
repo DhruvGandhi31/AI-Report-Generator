@@ -18,3 +18,34 @@ git clone https://github.com/DhruvGandhi31/AI-Report-Generator.git
 cd AI-Report-Generator
 ```
 
+## 2. Create a Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+```
+
+## 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Download the Pre-trained Model
+```bash
+python -c "from transformers import pipeline; pipeline('text-generation', model='gpt2')"
+```
+
+This command will download the GPT-2 model used for text generation.
+
+# Usage
+1. Prepare Your Data
+Ensure that your dataset (cleaned_data.csv) is in the root directory of the project. The dataset should contain columns for Country, Gold, Silver, Bronze, and Total.
+
+2. Run the Analysis Script
+To generate the report, run the following script:
+```bash
+python generate_report.py
+```
+This will execute the entire analysis pipeline and save the output as analysis_report.pdf in the project directory.
+
+3. View the Report
+After running the script, you can view the generated PDF report by opening analysis_report.pdf in any PDF viewer.
